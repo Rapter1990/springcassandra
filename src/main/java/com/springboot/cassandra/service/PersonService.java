@@ -19,8 +19,9 @@ public class PersonService {
    PersonRepository personRepository;
 
 
-   public Person savePerson(Person save){
-       return personRepository.save(save);
+   public Person savePerson(Person person){
+       person.setCreatedAt(new Date());
+       return personRepository.save(person);
    }
 
     public Optional<Person> findPersonById(String id) {
