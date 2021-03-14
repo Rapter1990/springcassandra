@@ -27,7 +27,7 @@ public class PersonService {
         return personRepository.findById(id);
     }
 
-    public void deleteMovie(String id) {
+    public void deletePerson(String id) {
         Optional<Person> movie = personRepository.findById(id);
         if(movie.isPresent()) {
             Person deletedPerson = movie.get();
@@ -53,9 +53,11 @@ public class PersonService {
                     person.setActive(personForUpdate.getActive());
                     person.setCreatedAt(new Date());
                     personRepository.save(person);
+
                 }, () -> {
                     throw new RuntimeException("No Record With this Id!");
                 }
         );
+
     }
 }
