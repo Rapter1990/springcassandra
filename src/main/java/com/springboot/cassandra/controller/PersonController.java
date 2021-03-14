@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
 import java.util.List;
 
 @RestController
@@ -26,7 +27,7 @@ public class PersonController {
     }
 
     @PostMapping("/persons/save")
-    public Person addPerson(@RequestBody Person person){
+    public Person addPerson(@RequestBody Person person) throws ParseException {
         LOG.info("Saving Person");
         personService.savePerson(person);
         LOG.info("Saved Person : " + person);

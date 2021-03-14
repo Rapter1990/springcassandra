@@ -2,10 +2,12 @@ package com.springboot.cassandra.service;
 
 import com.springboot.cassandra.model.Person;
 import com.springboot.cassandra.repository.PersonRepository;
+import com.springboot.cassandra.util.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -19,8 +21,8 @@ public class PersonService {
    PersonRepository personRepository;
 
 
-   public Person savePerson(Person person){
-       person.setCreatedAt(new Date());
+   public Person savePerson(Person person) throws ParseException {
+       person.setCreatedAt(Utils.formatDate(new Date()));
        return personRepository.save(person);
    }
 
@@ -52,7 +54,7 @@ public class PersonService {
                     person.setEmail(personForUpdate.getEmail());
                     person.setPassword(personForUpdate.getPassword());
                     person.setActive(personForUpdate.getActive());
-                    person.setCreatedAt(new Date());
+                    person.setCreatedAt(personForUpdate.getCreatedAt());
                     personRepository.save(person);
 
                 }, () -> {
