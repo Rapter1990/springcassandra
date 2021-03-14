@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
+@Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
