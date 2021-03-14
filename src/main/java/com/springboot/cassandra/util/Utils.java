@@ -2,16 +2,23 @@ package com.springboot.cassandra.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class Utils {
 
-    public static Date formatDate(Date date) throws ParseException {
+    public static LocalDate formatDate(LocalDate date) throws ParseException {
 
-        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
-        String dateString = format.format(date);
-        Date formatedDate = format.parse(dateString);
+        String dateFormat = "MM/dd/yyyy";
 
-        return formatedDate;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateFormat);
+
+        String formattedString = date.format(formatter);
+
+        LocalDate localDate = LocalDate.parse(formattedString, formatter);
+
+        return localDate;
     }
 }

@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -22,7 +24,12 @@ public class PersonService {
 
 
    public Person savePerson(Person person) throws ParseException {
-       person.setCreatedAt(Utils.formatDate(new Date()));
+
+       LocalDate now = Utils.formatDate(LocalDate.now());
+
+       System.out.println("savePerson LocalDate now : " + now);
+
+       person.setCreatedAt(now);
        return personRepository.save(person);
    }
 

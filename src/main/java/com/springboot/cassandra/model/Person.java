@@ -6,6 +6,7 @@ import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.UUID;
 
@@ -34,13 +35,13 @@ public class Person implements Serializable {
     private String email;
 
     @Column(value = "birth_date")
-    private Date birthDate;
+    private LocalDate birthDate;
 
     @Column(value = "pwd")
     private String password;
 
     @Column(value = "created_at")
-    private Date createdAt;
+    private LocalDate createdAt;
 
     @Column(value = "is_active")
     private Boolean active;

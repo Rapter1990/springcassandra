@@ -34,7 +34,7 @@ public class PersonController {
         return person;
     }
 
-    @GetMapping("/persons/id")
+    @GetMapping("/persons/{id}")
     public Person findById(@PathVariable("id") String personId){
         LOG.info("Finding By Person Id");
         Person person = personService.findPersonById(personId).orElseThrow(
