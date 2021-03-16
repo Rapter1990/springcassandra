@@ -30,6 +30,52 @@
     docker ps
 ```
 
+<b>3 )</b> To <b>save</b> person object, use a <b>POST</b> requested url with the request body
+```
+    http://localhost:8080/api/persons/save
+
+    {
+        "username": "Person2",
+        "name": "Person2 Name",
+        "surname": "Person2 Surname",
+        "email": "person2@p.com",
+        "birthDate": "1987-03-14",
+        "password": "person2",
+        "active": true
+    }
+
+```
+
+<b>4 )</b> To show all person list , use a <b>GET</b> requested url
+```
+    http://localhost:8080/api/persons
+```
+
+<b>5 )</b> To get any specific person , use a <b>GET</b> requested url
+```
+    http://localhost:8080/api/persons/{person_id}
+```
+
+<b>6 )</b> To <b>update</b> any specific person , use a <b>PUT</b> requested url with the request body
+```
+    http://localhost:8080/api/persons/{person_id}
+
+    {
+        "username": "Person 1 New Username",
+        "name": "Person1 New Name",
+        "surname": "Person1 NewSurname",
+        "email": "person1new@p.com",
+        "birthDate": "1988-03-14",
+        "password": "person1new",
+        "active": true
+    }
+```
+
+<b>7 )</b>To delete any specific person , use a <b>DELETE</b> requested url
+```
+    http://localhost:8080/api/persons/{person_id}
+```
+
 ### Screenshots
 
 <details>
