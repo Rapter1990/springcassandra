@@ -8,8 +8,7 @@
   <li></li>
   <li></li>
   <li></li>
-  <li>Here are the explation of this project</li>
-  <li>
+  <li>Here are the explation of this project
       <ul>
         <li></li>
       </ul>
