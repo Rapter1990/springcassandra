@@ -1,6 +1,6 @@
 # Spring Boot and Cassandra via Docker
 
-<img src="" alt="Main Information" width="800" height="300">
+<img src="screenshots\cassandra_springboot.PNG" alt="Main Information" width="800" height="300">
 
 ### 📖 Information
 
