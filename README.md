@@ -5,12 +5,11 @@
 ### 📖 Information
 
 <ul style="list-style-type:disc">
-  <li></li>
-  <li></li>
-  <li></li>
+  <li><b>Apache Cassandra</b> is a <b>columnar</b> NoSQL Database and it reads and writes columns of data rather than the rows</li>
+  <li>With <b>Apache Cassandra</b> , heavy-load applications sustains scalability and availability without compromising performance</li>
   <li>Here are the explation of this project
       <ul>
-        <li></li>
+        <li>It just uses Spring Data Cassandra to make <b>CRUD</b> operations with <b>Apache Cassandra</b> which runs on <b>Docker Container</b></li>
       </ul>
   </li>
 </ul>
@@ -24,7 +23,7 @@
     docker-compose up -d
 ```
 
-<b>2 )</b> Show <b>container</b> whih runs on <b>Docker</b>
+<b>2 )</b> Show <b>container</b> which runs on <b>Docker</b>
 ```
     docker ps
 ```
